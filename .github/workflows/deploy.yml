@@ -21,7 +21,7 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-           ssh -p 9009 -o StrictHostKeyChecking=no root@69.65.15.57 << 'EOF'
+          ssh -p 9099 -o StrictHostKeyChecking=no root@69.65.15.57 << 'EOF'
             cd /var/www/gadinsider.com
             git pull origin main
             composer install --no-interaction --prefer-dist --optimize-autoloader
@@ -31,4 +31,3 @@ jobs:
             php artisan view:cache
             chmod -R 775 storage bootstrap/cache
           EOF
-
