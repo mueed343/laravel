@@ -22,7 +22,7 @@ jobs:
       - name: Deploy via SSH
         run: |
           ssh -p 9009 -o StrictHostKeyChecking=no root@69.65.15.57 << 'EOF'
-            cd /var/www/gadinsider.com
+            cd /var/www/gadinsider.com/public
             git pull origin main
             composer install --no-interaction --prefer-dist --optimize-autoloader
             php artisan migrate --force
